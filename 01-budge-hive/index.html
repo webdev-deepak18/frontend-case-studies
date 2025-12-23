@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BudgetHive</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="/" class="brand">
+          <img
+            src="img/budget-hive-logo.svg"
+            alt="BudgetHive"
+            class="logo"
+          />
+        </a>
+
+        <nav class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#help">Help</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary">Get Started</a>
+
+          <button class="nav-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <button class="mobile-close" aria-label="Close menu">×</button>
+
+        <nav class="mobile-nav">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#help">Help</a>
+          <a href="#" class="btn btn-primary btn-nav">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Take control of your money — effortlessly.
+      </h1>
+
+      <p class="hero-text">
+        Track expenses, set budgets, and see insights —
+        all in one clean dashboard.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Get Started</a>
+        <a href="#" class="btn btn-outline">Watch Demo</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img
+        src="img/hero-illustration.webp"
+        alt="Budget tracking illustration"
+      />
+    </div>
+  </div>
+</section>
+<section class="features-section" id="features">
+  <div class="container">
+    <h2 class="features-title">Features</h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="img/wallet.svg" alt="" class="feature-icon" />
+        <h3 class="feature-title">Smart Budgeting</h3>
+        <p class="feature-text">
+          AI-powered spending insights to optimize your daily expenses.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <img src="img/goal.svg" alt="" class="feature-icon" />
+        <h3 class="feature-title">Financial Goals</h3>
+        <p class="feature-text">
+          Plan, track, and achieve your short-term and long-term milestones.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <img src="img/chart.svg" alt="" class="feature-icon" />
+        <h3 class="feature-title">Expense Tracking</h3>
+        <p class="feature-text">
+          Automatically categorize and track your expenses in real time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-header">
+      <h2>Simple, transparent pricing</h2>
+      <p>Choose a plan that fits your needs. Upgrade anytime.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="pricing-card">
+        <span class="plan-tag">Free</span>
+        <h3 class="price">₹0 <span>/ month</span></h3>
+        <p class="plan-desc">
+          Perfect for individuals who want to track expenses and understand their spending habits.
+        </p>
+
+        <ul class="plan-features">
+          <li>Track expenses</li>
+          <li>Monthly reports</li>
+          <li>Email support</li>
+        </ul>
+
+        <a href="#" class="btn btn-outline">Try Now</a>
+      </div>
+
+      <!-- Pro (highlighted) -->
+      <div class="pricing-card pricing-card--featured">
+        <span class="plan-tag">Pro</span>
+        <h3 class="price" style="color: #fff">₹299 <span>/ month</span></h3>
+        <p class="plan-desc">
+          Ideal for users who want deeper insights, smarter budgeting, and goal-driven financial planning.
+        </p>
+
+        <ul class="plan-features">
+          <li>Unlimited expenses</li>
+          <li>Smart insights</li>
+          <li>Goal tracking</li>
+        </ul>
+
+        <a href="#" class="btn btn-primary btn-full btn-white">Get Now</a>
+      </div>
+
+      <!-- Team -->
+      <div class="pricing-card">
+        <span class="plan-tag">Team</span>
+        <h3 class="price">₹799 <span>/ month</span></h3>
+        <p class="plan-desc">
+          Designed for families or teams who want to collaborate, manage shared budgets, and track goals together.
+        </p>
+
+        <ul class="plan-features">
+          <li>Goal tracking</li>
+          <li>Shared budgets</li>
+          <li>Priority support</li>
+        </ul>
+
+        <a href="#" class="btn btn-outline">Try Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="testimonials">
+  <div class="container">
+    <h2 class="testimonials-title">
+      Trusted by people who care about their finances
+    </h2>
+    <p class="testimonials-subtitle">
+      Here’s what our users say about BudgetHive.
+    </p>
+
+    <div class="testimonial-slider" id="testimonialSlider">
+      <div class="testimonial-track">
+
+        <!-- Card 1 -->
+        <article class="testimonial-card">
+          <img src="img/quote.svg" class="quote-icon" alt="" />
+          <p>
+            BudgetHive helped me clearly understand my monthly spending.
+            The insights are simple yet powerful.
+          </p>
+          <div class="user">
+            <img src="img/ananya.png" alt="Ananya" />
+            <div>
+              <strong>Ananya Sharma</strong>
+              <span>Product Manager</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="testimonial-card">
+          <img src="img/quote.svg" class="quote-icon" alt="" />
+          <p>
+            I’ve tried many apps, but BudgetHive feels clean, focused,
+            and easy to stick with.
+          </p>
+          <div class="user">
+            <img src="img/rahul.png" alt="Rahul" />
+            <div>
+              <strong>Rahul Verma</strong>
+              <span>Freelance Developer</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="testimonial-card">
+          <img src="img/quote.svg" class="quote-icon" alt="" />
+          <p>
+            The budgeting insights helped me save consistently
+            without feeling restricted.
+          </p>
+          <div class="user">
+            <img src="img/neha.png" alt="User" />
+            <div>
+              <strong>Neha Kapoor</strong>
+              <span>Marketing Lead</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="testimonial-card">
+          <img src="img/quote.svg" class="quote-icon" alt="" />
+          <p>
+            BudgetHive made expense tracking effortless.
+            Everything is exactly where I expect it.
+          </p>
+          <div class="user">
+            <img src="img/amit.png" alt="User" />
+            <div>
+              <strong>Amit Rao</strong>
+              <span>Startup Founder</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="testimonial-card">
+          <img src="img/quote.svg" class="quote-icon" alt="" />
+          <p>
+            The clean UI and clear reports make financial planning
+            stress-free.
+          </p>
+          <div class="user">
+            <img src="img/pooja.png" alt="User" />
+            <div>
+              <strong>Pooja Nair</strong>
+              <span>UX Designer</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="testimonial-card">
+          <img src="img/quote.svg" class="quote-icon" alt="" />
+          <p>
+            I finally feel in control of my finances.
+            BudgetHive just works.
+          </p>
+          <div class="user">
+            <img src="img/karan.png" alt="User" />
+            <div>
+              <strong>Karan Mehta</strong>
+              <span>Consultant</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="testimonial-dots" id="testimonialDots"></div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2 class="cta-title">
+      Start managing your money smarter today
+    </h2>
+
+    <p class="cta-subtitle">
+      Track expenses, set goals, and gain clarity — all in one simple dashboard.
+    </p>
+
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary">Get Started</a>
+      <a href="#" class="btn btn-outline">Watch Demo</a>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-top container">
+    <!-- Column 1: Brand -->
+    <div class="footer-brand">
+      <img
+        src="img/budget-hive-logo-white.svg"
+        alt="BudgetHive"
+        class="footer-logo"
+      />
+      <p class="footer-desc">
+        helps you track expenses, set goals, and make smarter financial
+        decisions.
+      </p>
+    </div>
+
+    <!-- Column 2: Links -->
+    <div class="footer-links">
+      <div class="footer-col">
+        <a href="#">› Features</a>
+        <a href="#">› Pricing</a>
+        <a href="#">› Help</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#">› About</a>
+        <a href="#">› Careers</a>
+        <a href="#">› Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#">› Privacy Policy</a>
+        <a href="#">› Terms of Service</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="footer-bottom">
+    © 2025 BudgetHive. All rights reserved.
+  </div>
+</footer>
+
+    <script>
+      const toggle = document.querySelector(".nav-toggle");
+      const menu = document.querySelector(".mobile-menu");
+      const closeBtn = document.querySelector(".mobile-close");
+
+      toggle.addEventListener("click", () => {
+        menu.classList.add("open");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        menu.classList.remove("open");
+      });
+    </script>
+   <script>
+  const slider = document.getElementById("testimonialSlider");
+  const track = slider.querySelector(".testimonial-track");
+  const cards = slider.querySelectorAll(".testimonial-card");
+  const dotsContainer = document.getElementById("testimonialDots");
+
+  let index = 0;
+  let interval;
+  let visibleCards = window.innerWidth > 1024 ? 2 : 1;
+  let totalSlides = Math.ceil(cards.length / visibleCards);
+
+  function getCardWidth() {
+    return cards[0].offsetWidth + 32; // card width + gap
+  }
+
+  function updateSlider() {
+    const moveX = index * getCardWidth() * visibleCards;
+    track.style.transform = `translateX(-${moveX}px)`;
+
+    dotsContainer.querySelectorAll("button").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function createDots() {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("button");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        index = i;
+        updateSlider();
+        resetInterval();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      index = (index + 1) % totalSlides;
+      updateSlider();
+    }, 4000);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    startAutoSlide();
+  }
+
+  slider.addEventListener("mouseenter", () => clearInterval(interval));
+  slider.addEventListener("mouseleave", startAutoSlide);
+
+  window.addEventListener("resize", () => {
+    visibleCards = window.innerWidth > 1024 ? 2 : 1;
+    totalSlides = Math.ceil(cards.length / visibleCards);
+    index = 0;
+    createDots();
+    updateSlider();
+    resetInterval();
+  });
+
+  createDots();
+  updateSlider();
+  startAutoSlide();
+</script>
+
+
+  </body>
+</html>
