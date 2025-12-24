@@ -1,0 +1,440 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Analytics Dashboard | Reports</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Mobile fallback (shown via CSS media query) -->
+    <div class="mobile-block">
+      <h2>Desktop experience required</h2>
+      <p>
+        This dashboard is optimized for desktop and tablet screens. Please open
+        on a larger device for the best experience.
+      </p>
+    </div>
+
+    <!-- App wrapper -->
+    <div class="app">
+      <!-- ================= Header ================= -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="text-display-sm">Business Analytics Dashboard</h1>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <img src="img/search.svg" alt="Search" />
+            <input type="text" placeholder="Search" />
+          </div>
+
+          <div class="profile-avatar">D</div>
+        </div>
+      </header>
+
+      <!-- ================= Main Layout ================= -->
+      <div class="layout">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+          <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+              <img src="img/home.svg" alt="Home" />
+              <span>Home</span>
+            </a>
+
+            <a href="reports.html" class="nav-item active">
+              <img src="img/report.svg" alt="Reports" />
+              <span>Reports</span>
+            </a>
+
+            <a href="#" class="nav-item">
+              <img src="img/analytic.svg" alt="Analytics" />
+              <span>Analytics</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+              <img src="img/setting.svg" alt="Settings" />
+              <span>Settings</span>
+            </a>
+          </nav>
+
+          <!-- Sidebar footer -->
+          <div class="sidebar-footer">
+            <span>Analytics Dashboard</span>
+            <span>v1.0</span>
+          </div>
+        </aside>
+
+        <!-- ===== Main Content ===== -->
+        <main class="main">
+          <div class="container">
+            <!-- ===== Page Header ===== -->
+            <section class="mb-24">
+              <h2 class="text-display-sm">Reports</h2>
+              <p class="text-body-sm">Revenue performance breakdown</p>
+            </section>
+
+            <!-- ===== Filters Section ===== -->
+            <section class="card mb-24">
+              <div class="filters-row">
+                <!-- Date Filter -->
+                <div class="filter">
+                  <button class="filter-btn" data-filter="date">
+                    <span>Date</span>
+                    <img src="img/down.svg" alt="Open date filter" />
+                  </button>
+
+                  <div class="filter-dropdown">
+                    <button>All Months</button>
+                    <button>This Month</button>
+                    <button>Last Month</button>
+                    <button>Last 3 Months</button>
+                  </div>
+                </div>
+
+                <!-- Source Filter -->
+                <div class="filter">
+                  <button class="filter-btn" data-filter="source">
+                    <span>Source</span>
+                    <img src="img/down.svg" alt="Open source filter" />
+                  </button>
+
+                  <div class="filter-dropdown">
+                    <button>All Sources</button>
+                    <button>Google Ads</button>
+                    <button>Email Campaign</button>
+                    <button>Referral</button>
+                    <button>Organic Search</button>
+                    <button>Social Media</button>
+                    <button>Direct</button>
+                  </div>
+                </div>
+
+                <!-- Status Filter -->
+                <div class="filter">
+                  <button class="filter-btn" data-filter="status">
+                    <span>Status</span>
+                    <img src="img/down.svg" alt="Open status filter" />
+                  </button>
+                  <div class="filter-dropdown">
+                    <button>All Status</button>
+                    <button>Active</button>
+                    <button>Paused</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ===== Reports Chart Section ===== -->
+            <section class="card mt-24">
+              <div class="mb-24">
+                <div class="text-display-sm">Revenue by Source</div>
+                <div class="text-body-xs">₹ in thousands</div>
+              </div>
+
+              <div class="chart-wrap">
+                <canvas id="reportsBarChart" height="380"></canvas>
+              </div>
+
+              <div class="chart-caption text-body-xs mt-16">
+                Revenue by Source (₹ in thousands)
+              </div>
+            </section>
+
+            <!-- ===== Table Section ===== -->
+            <!-- Revenue Table -->
+            <section class="card table-section mt-32">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Source</th>
+                    <th>Revenue</th>
+                    <th>Users</th>
+                    <th>Conversion</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>12 Jun</td>
+                    <td>Google Ads</td>
+                    <td>₹1.2M</td>
+                    <td>12400</td>
+                    <td>3.4%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>11 Jun</td>
+                    <td>Email Campaign</td>
+                    <td>₹820K</td>
+                    <td>9600</td>
+                    <td>3.8%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>10 Jun</td>
+                    <td>Referral</td>
+                    <td>₹640K</td>
+                    <td>7200</td>
+                    <td>2.9%</td>
+                    <td><span class="status paused">Paused</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>09 Jun</td>
+                    <td>Organic Search</td>
+                    <td>₹540K</td>
+                    <td>6800</td>
+                    <td>4.1%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>08 Jun</td>
+                    <td>Social Media</td>
+                    <td>₹430K</td>
+                    <td>5900</td>
+                    <td>2.6%</td>
+                    <td><span class="status paused">Paused</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>07 Jun</td>
+                    <td>Direct</td>
+                    <td>₹380K</td>
+                    <td>5100</td>
+                    <td>3.2%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const barCtx = document.getElementById('reportsBarChart')
+
+      const reportsChart = new Chart(barCtx, {
+        type: 'bar',
+        data: {
+          labels: [],
+          datasets: [
+            {
+              data: [],
+              backgroundColor: '#cbd5e1',
+              borderRadius: 6,
+              barThickness: 48,
+              hoverBackgroundColor: '#94a3b8',
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => '₹' + ctx.parsed.y + 'K',
+              },
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              suggestedMax: 1500,
+              ticks: { stepSize: 500 },
+            },
+            x: { grid: { display: false } },
+          },
+        },
+      })
+    </script>
+    <script>
+      const rawData = [
+        {
+          date: '12 Jun',
+          source: 'Google Ads',
+          revenue: 1200,
+          users: 12400,
+          conversion: '3.4%',
+          status: 'Active',
+        },
+        {
+          date: '11 Jun',
+          source: 'Email Campaign',
+          revenue: 820,
+          users: 9600,
+          conversion: '3.8%',
+          status: 'Active',
+        },
+        {
+          date: '10 Jun',
+          source: 'Referral',
+          revenue: 640,
+          users: 7200,
+          conversion: '2.9%',
+          status: 'Paused',
+        },
+        {
+          date: '09 Jun',
+          source: 'Organic Search',
+          revenue: 540,
+          users: 6800,
+          conversion: '4.1%',
+          status: 'Active',
+        },
+        {
+          date: '08 Jun',
+          source: 'Social Media',
+          revenue: 430,
+          users: 5900,
+          conversion: '2.6%',
+          status: 'Paused',
+        },
+        {
+          date: '07 Jun',
+          source: 'Direct',
+          revenue: 380,
+          users: 5100,
+          conversion: '3.2%',
+          status: 'Active',
+        },
+      ]
+    </script>
+    <script>
+  /* ===============================
+     Filter State
+  =============================== */
+  const activeFilters = {
+    source: null,
+    status: null,
+  }
+
+  const filters = document.querySelectorAll('.filter')
+
+  /* ===============================
+     Dropdown open / close
+  =============================== */
+  filters.forEach((filter) => {
+    const btn = filter.querySelector('.filter-btn')
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation()
+
+      filters.forEach((f) => {
+        if (f !== filter) f.classList.remove('open')
+      })
+
+      filter.classList.toggle('open')
+    })
+  })
+
+  document.addEventListener('click', () => {
+    filters.forEach((f) => f.classList.remove('open'))
+  })
+
+  /* ===============================
+     Option selection  ✅ FIXED
+  =============================== */
+  document.querySelectorAll('.filter').forEach((filter) => {
+    const btn = filter.querySelector('.filter-btn')
+    const label = btn.querySelector('span')
+    const type = btn.dataset.filter
+
+    filter.querySelectorAll('.filter-dropdown button').forEach((option) => {
+      option.addEventListener('click', (e) => {
+        e.stopPropagation()
+
+        const value = option.textContent.trim()
+
+        // ✅ Handle "All" properly
+        if (value.toLowerCase().startsWith('all')) {
+          activeFilters[type] = null
+          label.textContent =
+            type.charAt(0).toUpperCase() + type.slice(1)
+        } else {
+          activeFilters[type] = value
+          label.textContent = value
+        }
+
+        filter.classList.remove('open')
+        applyFilters()
+      })
+    })
+  })
+
+  /* ===============================
+     Apply filters
+  =============================== */
+  function applyFilters() {
+    let filtered = [...rawData]
+
+    if (activeFilters.source) {
+      filtered = filtered.filter((r) => r.source === activeFilters.source)
+    }
+
+    if (activeFilters.status) {
+      filtered = filtered.filter((r) => r.status === activeFilters.status)
+    }
+
+    renderTable(filtered)
+    updateChart(filtered)
+  }
+
+  /* ===============================
+     Render table
+  =============================== */
+  function renderTable(data) {
+    const tbody = document.querySelector('.data-table tbody')
+    tbody.innerHTML = ''
+
+    data.forEach((row) => {
+      tbody.innerHTML += `
+        <tr>
+          <td>${row.date}</td>
+          <td>${row.source}</td>
+          <td>₹${row.revenue}K</td>
+          <td>${row.users}</td>
+          <td>${row.conversion}</td>
+          <td>
+            <span class="status ${row.status.toLowerCase()}">
+              ${row.status}
+            </span>
+          </td>
+        </tr>
+      `
+    })
+  }
+
+  /* ===============================
+     Update chart
+  =============================== */
+  function updateChart(data) {
+    reportsChart.data.labels = data.map((d) => d.source)
+    reportsChart.data.datasets[0].data = data.map((d) => d.revenue)
+    reportsChart.update()
+  }
+
+  /* ===============================
+     Initial render
+  =============================== */
+  applyFilters()
+</script>
+
+  </body>
+</html>

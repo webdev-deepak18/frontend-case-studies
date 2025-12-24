@@ -1,0 +1,272 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Analytics Dashboard</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Mobile fallback (shown via CSS media query) -->
+    <div class="mobile-block">
+      <h2>Desktop experience required</h2>
+      <p>
+        This dashboard is optimized for desktop and tablet screens. Please open
+        on a larger device for the best experience.
+      </p>
+    </div>
+
+    <!-- App wrapper -->
+    <div class="app">
+      <!-- ================= Header ================= -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="text-display-sm">Business Analytics Dashboard</h1>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <img src="img/search.svg" alt="Search" />
+            <input type="text" placeholder="Search" />
+          </div>
+
+          <div class="profile-avatar">D</div>
+        </div>
+      </header>
+
+      <!-- ================= Main Layout ================= -->
+      <div class="layout">
+        <!-- ===== Sidebar ===== -->
+     <aside class="sidebar">
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-item active">
+      <img src="img/home.svg" alt="Home" />
+      <span>Home</span>
+    </a>
+
+    <a href="reports.html" class="nav-item">
+      <img src="img/report.svg" alt="Reports" />
+      <span>Reports</span>
+    </a>
+
+    <a href="#" class="nav-item">
+      <img src="img/analytic.svg" alt="Analytics" />
+      <span>Analytics</span>
+    </a>
+
+    <a href="settings.html" class="nav-item">
+      <img src="img/setting.svg" alt="Settings" />
+      <span>Settings</span>
+    </a>
+  </nav>
+
+  <!-- Sidebar footer -->
+  <div class="sidebar-footer">
+    <span>Analytics Dashboard</span>
+    <span>v1.0</span>
+  </div>
+</aside>
+
+
+        <!-- ===== Main Content ===== -->
+        <main class="main">
+          <div class="container">
+            <!-- ===== Metrics Section ===== -->
+            <section class="metrics-grid">
+              <div class="metric-card card">
+                <p class="text-metric-label">Total Revenue</p>
+                <p class="text-metric-value">₹4.2M</p>
+                <p class="text-metric-delta metric-positive">
+                  +12.4% vs last month
+                </p>
+              </div>
+
+              <div class="metric-card card">
+                <p class="text-metric-label">Active Users</p>
+                <p class="text-metric-value">38,420</p>
+                <p class="text-metric-delta metric-positive">
+                  +8.1% vs last month
+                </p>
+              </div>
+
+              <div class="metric-card card">
+                <p class="text-metric-label">Conversion Rate</p>
+                <p class="text-metric-value">3.6%</p>
+                <p class="text-metric-delta metric-positive">
+                  +0.4% vs last month
+                </p>
+              </div>
+
+              <div class="metric-card card">
+                <p class="text-metric-label">Monthly Growth</p>
+                <p class="text-metric-value">+12.4%</p>
+                <p class="text-metric-delta metric-positive">
+                  Month-over-Month
+                </p>
+              </div>
+            </section>
+
+            <!-- ===== Chart Section ===== -->
+            <!-- Revenue Trend -->
+            <section class="card mt-24">
+              <div class="mb-24">
+                <div class="text-display-sm">Revenue Trend</div>
+                <div class="text-body-xs">Last 6 months</div>
+              </div>
+
+              <div class="chart-wrap">
+                <canvas id="revenueChart" height="450"></canvas>
+              </div>
+            </section>
+
+            <!-- ===== Table Section ===== -->
+            <!-- Revenue Table -->
+            <section class="card table-section mt-32">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Source</th>
+                    <th>Revenue</th>
+                    <th>Users</th>
+                    <th>Conversion</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>12 Jun</td>
+                    <td>Google Ads</td>
+                    <td>₹1.2M</td>
+                    <td>12400</td>
+                    <td>3.4%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>11 Jun</td>
+                    <td>Email Campaign</td>
+                    <td>₹820K</td>
+                    <td>9600</td>
+                    <td>3.8%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>10 Jun</td>
+                    <td>Referral</td>
+                    <td>₹640K</td>
+                    <td>7200</td>
+                    <td>2.9%</td>
+                    <td><span class="status paused">Paused</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>09 Jun</td>
+                    <td>Organic Search</td>
+                    <td>₹540K</td>
+                    <td>6800</td>
+                    <td>4.1%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>08 Jun</td>
+                    <td>Social Media</td>
+                    <td>₹430K</td>
+                    <td>5900</td>
+                    <td>2.6%</td>
+                    <td><span class="status paused">Paused</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>07 Jun</td>
+                    <td>Direct</td>
+                    <td>₹380K</td>
+                    <td>5100</td>
+                    <td>3.2%</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+  const ctx = document.getElementById('revenueChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [
+        {
+          label: 'Revenue',
+          data: [2.8, 3.1, 3.4, 3.6, 3.9, 4.2],
+          borderColor: '#334155',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          tension: 0.35,
+          pointRadius: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              return '₹' + context.parsed.y + 'M';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          grid: {
+            color: '#e2e8f0'
+          },
+          ticks: {
+            callback: function (value) {
+              return '₹' + value + 'M';
+            },
+            color: '#64748b',
+            font: {
+              family: 'IBM Plex Sans',
+              size: 12
+            }
+          }
+        },
+        x: {
+          grid: {
+            display: false
+          },
+          ticks: {
+            color: '#64748b',
+            font: {
+              family: 'IBM Plex Sans',
+              size: 12
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
+
+  </body>
+</html>
