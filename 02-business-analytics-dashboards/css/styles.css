@@ -803,6 +803,140 @@ body {
   transform: rotate(180deg);
 }
 
+/* ===========================================settings page============================= */
+/* ===============================
+   Settings page helpers
+================================ */
+
+.settings-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+/* Toggle placeholder */
+.toggle {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  width: fit-content;
+}
+
+.toggle.on {
+  background: var(--neutral-700);
+  color: var(--white);
+}
+
+.toggle.off {
+  background: var(--neutral-200);
+  color: var(--neutral-700);
+}
+
+/* Select placeholder */
+.select-placeholder {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-8);
+  background: var(--neutral-50);
+  font-size: 14px;
+  width: fit-content;
+}
+.hidden {
+  display: none;
+}
+
+.profile-input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-8);
+  font-size: 14px;
+  width: 100%;
+}
+.toggle {
+  min-width: 44px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.toggle:active {
+  transform: scale(0.96);
+}
+
+.toggle.on {
+  background: #334155;
+  color: #fff;
+}
+
+.toggle.off {
+  background: #e2e8f0;
+  color: #334155;
+}
+/* ===============================
+   Custom Select
+================================ */
+
+.select {
+  position: relative;
+}
+
+.select-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-8);
+  background: var(--neutral-50);
+  cursor: pointer;
+}
+
+.select-dropdown {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  left: 0;
+  min-width: 180px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-8);
+  box-shadow: var(--shadow-md);
+  display: none;
+  flex-direction: column;
+  padding: 6px;
+  z-index: 30;
+}
+
+.select-dropdown button {
+  padding: 8px 10px;
+  text-align: left;
+  border-radius: var(--r-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.select-dropdown button:hover {
+  background: var(--neutral-100);
+}
+
+.select.open .select-dropdown {
+  display: flex;
+}
+
+.select.open img {
+  transform: rotate(180deg);
+}
 
 
 /* ===============================

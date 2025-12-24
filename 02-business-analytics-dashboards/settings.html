@@ -1,0 +1,428 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Analytics Dashboard | Reports</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Mobile fallback (shown via CSS media query) -->
+    <div class="mobile-block">
+      <h2>Desktop experience required</h2>
+      <p>
+        This dashboard is optimized for desktop and tablet screens. Please open
+        on a larger device for the best experience.
+      </p>
+    </div>
+
+    <!-- App wrapper -->
+    <div class="app">
+      <!-- ================= Header ================= -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="text-display-sm">Business Analytics Dashboard</h1>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <img src="img/search.svg" alt="Search" />
+            <input type="text" placeholder="Search" />
+          </div>
+
+          <div class="profile-avatar">D</div>
+        </div>
+      </header>
+
+      <!-- ================= Main Layout ================= -->
+      <div class="layout">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+          <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+              <img src="img/home.svg" alt="Home" />
+              <span>Home</span>
+            </a>
+
+            <a href="reports.html" class="nav-item active">
+              <img src="img/report.svg" alt="Reports" />
+              <span>Reports</span>
+            </a>
+
+            <a href="#" class="nav-item">
+              <img src="img/analytic.svg" alt="Analytics" />
+              <span>Analytics</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+              <img src="img/setting.svg" alt="Settings" />
+              <span>Settings</span>
+            </a>
+          </nav>
+
+          <!-- Sidebar footer -->
+          <div class="sidebar-footer">
+            <span>Analytics Dashboard</span>
+            <span>v1.0</span>
+          </div>
+        </aside>
+
+        <!-- ===== Main Content ===== -->
+        <main class="main">
+          <div class="container">
+            <!-- ===== Page Header ===== -->
+
+            <!-- ===== Page Header ===== -->
+            <section class="mb-24">
+              <h2 class="text-display-sm">Settings</h2>
+              <p class="text-body-sm">Manage your account preferences</p>
+            </section>
+
+            <!-- ===== Profile Information ===== -->
+            <section class="card mb-24" id="profileCard">
+              <div class="flex-between mb-16">
+                <h3 class="text-display-sm">Profile Information</h3>
+
+                <div class="profile-actions">
+                  <button class="btn btn-secondary" id="editProfileBtn">
+                    Edit
+                  </button>
+                  <button class="btn btn-primary hidden" id="saveProfileBtn">
+                    Save
+                  </button>
+                  <button
+                    class="btn btn-secondary hidden"
+                    id="cancelProfileBtn"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+
+              <div class="settings-row">
+                <span class="text-body-xs">Name</span>
+                <span class="profile-text" data-field="name">Deepak S</span>
+                <input
+                  class="profile-input hidden"
+                  data-field="name"
+                  value="Deepak S"
+                />
+              </div>
+
+              <div class="settings-row">
+                <span class="text-body-xs">Email</span>
+                <span class="profile-text" data-field="email"
+                  >deepak@acme.corp</span
+                >
+                <input
+                  class="profile-input hidden"
+                  data-field="email"
+                  value="deepak@acme.corp"
+                />
+              </div>
+
+              <div class="settings-row">
+                <span class="text-body-xs">Company</span>
+                <span class="profile-text" data-field="company">Acme Corp</span>
+                <input
+                  class="profile-input hidden"
+                  data-field="company"
+                  value="Acme Corp"
+                />
+              </div>
+            </section>
+
+            <!-- ===== Notifications ===== -->
+            <section class="card mb-24">
+              <h3 class="text-display-sm mb-16">Notifications</h3>
+
+              <div class="settings-row">
+                <span class="text-body-md">Email Alerts</span>
+                <span class="toggle on" data-key="emailAlerts">On</span>
+              </div>
+
+              <div class="settings-row">
+                <span class="text-body-md">Weekly Reports</span>
+                <span class="toggle off" data-key="weeklyReports">Off</span>
+              </div>
+
+              <div class="settings-row">
+                <span class="text-body-md">Product Updates</span>
+                <span class="toggle on" data-key="productUpdates">On</span>
+              </div>
+            </section>
+
+            <!-- ===== Data Preferences ===== -->
+            <section class="card">
+              <h3 class="text-display-sm mb-16">Data Preferences</h3>
+
+              <!-- Currency -->
+              <div class="settings-row">
+                <span class="text-body-md">Default Currency</span>
+
+                <div class="select" data-key="currency">
+                  <button class="select-btn">
+                    <span class="select-value">INR</span>
+                    <img src="img/down.svg" alt="" />
+                  </button>
+
+                  <div class="select-dropdown">
+                    <button data-value="INR">INR</button>
+                    <button data-value="USD">USD</button>
+                    <button data-value="EUR">EUR</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Date format -->
+              <div class="settings-row mb-24">
+                <span class="text-body-md">Date Format</span>
+
+                <div class="select" data-key="dateFormat">
+                  <button class="select-btn">
+                    <span class="select-value">DD/MM/YYYY</span>
+                    <img src="img/down.svg" alt="" />
+                  </button>
+
+                  <div class="select-dropdown">
+                    <button data-value="DD/MM/YYYY">DD/MM/YYYY</button>
+                    <button data-value="MM/DD/YYYY">MM/DD/YYYY</button>
+                    <button data-value="YYYY-MM-DD">YYYY-MM-DD</button>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary" id="savePreferences">
+                Save Changes
+              </button>
+              <!-- <p class="text-body-xs mt-8">Changes apply immediately</p> -->
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* ===============================
+     Profile Edit + localStorage
+  =============================== */
+
+  const editBtn = document.getElementById('editProfileBtn')
+  const saveBtn = document.getElementById('saveProfileBtn')
+  const cancelBtn = document.getElementById('cancelProfileBtn')
+
+  const textFields = document.querySelectorAll('.profile-text')
+  const inputFields = document.querySelectorAll('.profile-input')
+
+  let originalValues = {}
+
+  /* ===============================
+     Load saved data
+  =============================== */
+  const savedProfile = localStorage.getItem('profileSettings')
+
+  if (savedProfile) {
+    const data = JSON.parse(savedProfile)
+
+    inputFields.forEach(input => {
+      const field = input.dataset.field
+      if (data[field]) {
+        input.value = data[field]
+        document.querySelector(
+          `.profile-text[data-field="${field}"]`
+        ).textContent = data[field]
+      }
+    })
+  }
+
+  /* ===============================
+     Enter Edit Mode
+  =============================== */
+  editBtn.addEventListener('click', () => {
+    originalValues = {}
+
+    inputFields.forEach(input => {
+      const field = input.dataset.field
+      originalValues[field] = input.value
+      input.classList.remove('hidden')
+    })
+
+    textFields.forEach(text => text.classList.add('hidden'))
+
+    editBtn.classList.add('hidden')
+    saveBtn.classList.remove('hidden')
+    cancelBtn.classList.remove('hidden')
+  })
+
+  /* ===============================
+     Save Profile
+  =============================== */
+  saveBtn.addEventListener('click', () => {
+    const profileData = {}
+
+    inputFields.forEach(input => {
+      const field = input.dataset.field
+      const value = input.value.trim()
+
+      profileData[field] = value
+
+      document.querySelector(
+        `.profile-text[data-field="${field}"]`
+      ).textContent = value
+
+      input.classList.add('hidden')
+    })
+
+    textFields.forEach(text => text.classList.remove('hidden'))
+
+    localStorage.setItem('profileSettings', JSON.stringify(profileData))
+
+    saveBtn.classList.add('hidden')
+    cancelBtn.classList.add('hidden')
+    editBtn.classList.remove('hidden')
+  })
+
+  /* ===============================
+     Cancel Changes
+  =============================== */
+  cancelBtn.addEventListener('click', () => {
+    inputFields.forEach(input => {
+      const field = input.dataset.field
+      input.value = originalValues[field]
+      input.classList.add('hidden')
+    })
+
+    textFields.forEach(text => text.classList.remove('hidden'))
+
+    saveBtn.classList.add('hidden')
+    cancelBtn.classList.add('hidden')
+    editBtn.classList.remove('hidden')
+  })
+})
+</script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        /* ===============================
+     STORAGE KEYS
+  =============================== */
+        const PROFILE_KEY = 'profileSettings'
+        const NOTIFY_KEY = 'notificationSettings'
+        const PREF_KEY = 'dataPreferences'
+
+        /* ===============================
+     DEFAULT STATES
+  =============================== */
+        const defaultNotifications = {
+          emailAlerts: true,
+          weeklyReports: false,
+          productUpdates: true,
+        }
+
+        const defaultPrefs = {
+          currency: 'INR',
+          dateFormat: 'DD/MM/YYYY',
+        }
+
+        /* ===============================
+     LOAD SAVED STATES
+  =============================== */
+        const savedNotifications =
+          JSON.parse(localStorage.getItem(NOTIFY_KEY)) || defaultNotifications
+
+        const savedPrefs =
+          JSON.parse(localStorage.getItem(PREF_KEY)) || defaultPrefs
+
+        /* ===============================
+     DRAFT STATES (unsaved)
+  =============================== */
+        let draftNotifications = { ...savedNotifications }
+        let draftPrefs = { ...savedPrefs }
+
+        /* ===============================
+     NOTIFICATIONS (TOGGLES)
+  =============================== */
+        const toggles = document.querySelectorAll('.toggle')
+
+        toggles.forEach((toggle) => {
+          const key = toggle.dataset.key
+          applyToggle(toggle, draftNotifications[key])
+
+          toggle.addEventListener('click', () => {
+            draftNotifications[key] = !draftNotifications[key]
+            applyToggle(toggle, draftNotifications[key])
+          })
+        })
+
+        function applyToggle(el, isOn) {
+          el.classList.toggle('on', isOn)
+          el.classList.toggle('off', !isOn)
+          el.textContent = isOn ? 'On' : 'Off'
+        }
+
+        /* ===============================
+     DATA PREFERENCES (SELECTS)
+  =============================== */
+        const selects = document.querySelectorAll('.select')
+
+        selects.forEach((select) => {
+          const key = select.dataset.key
+          const valueEl = select.querySelector('.select-value')
+          valueEl.textContent = draftPrefs[key]
+
+          const btn = select.querySelector('.select-btn')
+
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation()
+            selects.forEach((s) => s !== select && s.classList.remove('open'))
+            select.classList.toggle('open')
+          })
+
+          select
+            .querySelectorAll('.select-dropdown button')
+            .forEach((option) => {
+              option.addEventListener('click', (e) => {
+                e.stopPropagation()
+                const value = option.dataset.value
+                draftPrefs[key] = value
+                valueEl.textContent = value
+                select.classList.remove('open')
+              })
+            })
+        })
+
+        document.addEventListener('click', () => {
+          selects.forEach((s) => s.classList.remove('open'))
+        })
+
+        /* ===============================
+     SAVE BUTTON (GLOBAL)
+  =============================== */
+        const saveBtn = document.getElementById('savePreferences')
+
+        const feedback = document.createElement('p')
+        feedback.className = 'text-body-xs mt-8'
+        feedback.textContent = '✓ Settings saved successfully'
+        feedback.style.display = 'none'
+
+        saveBtn.insertAdjacentElement('afterend', feedback)
+
+        saveBtn.addEventListener('click', () => {
+          localStorage.setItem(NOTIFY_KEY, JSON.stringify(draftNotifications))
+          localStorage.setItem(PREF_KEY, JSON.stringify(draftPrefs))
+
+          feedback.style.display = 'block'
+
+          setTimeout(() => {
+            feedback.style.display = 'none'
+          }, 3000)
+        })
+      })
+    </script>
+  </body>
+</html>
