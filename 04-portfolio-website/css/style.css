@@ -1,0 +1,697 @@
+/**
+ * ==========================================================================
+ *    FONT
+ * ==========================================================================
+ *
+ * @format
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   CSS RESET (clean + intentional)
+========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   DESIGN TOKENS
+========================================================================== */
+:root {
+  /* Colors */
+  --background: #ffffff;
+
+  --text-primary: #111111;
+  --text-secondary: #444444;
+  --muted: #6b6b6b;
+  --grey: #e6e6e6;
+
+  --accent-slate-blue: #5b6f8e;
+
+  /* Spacing (from Figma) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+
+  /* Layout */
+  --max-width-home: 1200px; /* intentional, adjustable later */
+  --max-width-content: 850px;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES (mapped to Figma styles)
+========================================================================== */
+.text-h1 {
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.text-h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.text-h3 {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.text-body-large {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.text-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.text-small {
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .text-h1 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}
+/* ==========================================================================
+   LAYOUT UTILITIES
+========================================================================== */
+.container-home {
+  width: 100%;
+  max-width: var(--max-width-home);
+  margin: 0 auto;
+  padding-left: var(--space-32);
+  padding-right: var(--space-32);
+}
+
+.container-narrow {
+ 
+  padding-left: var(--space-32);
+  padding-right: var(--space-32);
+}
+.container-content {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding-left: var(--space-24);
+  padding-right: var(--space-24);
+}
+
+/* .section {
+  padding-top: var(--space-80);
+  padding-bottom: var(--space-80);
+} */
+.section {
+  padding-top: var(--space-48);
+  padding-bottom: var(--space-48);
+}
+/* .section--tight {
+  padding-top: var(--space-48);
+  padding-bottom: var(--space-48);
+} */
+/* ==========================================================================
+   BUTTONS (GLOBAL)
+========================================================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-20);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border: none;
+  border-radius: 6px;
+  padding-left: 0;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-20);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-slate-blue);
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, .2);
+}
+
+.btn-primary {
+  position: relative;
+}
+
+.btn-primary::after {
+  content: '→';
+  margin-left: var(--space-4);
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(4px);
+}
+
+
+/* other utilities */
+.show{
+  display: block !important
+}
+/* ==========================================================================
+   NAV HELPERS (structure only, no layout yet)
+========================================================================== */
+.nav-active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ==========================================================================
+   HEADER / NAV
+========================================================================== */
+.site-header {
+  width: 100%;
+  border-bottom: 1px solid var(--grey);
+  background-color: var(--background);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+/* Brand */
+.brand-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.brand-role {
+  font-size: 14px;
+  margin-top: var(--space-4);
+  color: var(--text-secondary);
+}
+
+/* Nav */
+.site-nav {
+  display: flex;
+  gap: var(--space-24);
+}
+
+.nav-link {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.nav-active {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ==========================================================================
+   MOBILE (stacked, no hamburger)
+========================================================================== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-16);
+  }
+
+  .site-nav {
+    gap: var(--space-16);
+  }
+}
+
+/* ==========================================================================
+   HOME HERO
+========================================================================== */
+.hero{
+  padding-top: var(--space-64)
+}
+.hero-title {
+  max-width: 900px;
+}
+
+.hero-subtitle {
+  margin-top: var(--space-24);
+  max-width: 720px;
+}
+
+.hero-actions {
+  margin-top: var(--space-16);
+  display: flex;
+  gap: var(--space-16);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ==========================================================================
+   MY WORK SECTION
+========================================================================== */
+.work-list {
+  margin-top: var(--space-8);
+}
+
+.work-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* bottom aligned as requested */
+  padding-top: var(--space-40);
+  padding-bottom: var(--space-40);
+  border-bottom: 1px solid var(--grey);
+}
+
+.work-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0
+}
+
+.work-main {
+  max-width: 620px;
+}
+
+.work-main .text-body {
+  margin-top: var(--space-12);
+}
+
+.work-main .text-small {
+  margin-top: var(--space-12);
+}
+
+/* Actions */
+.work-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.work-actions-top,
+.work-actions-bottom {
+  display: flex;
+  gap: var(--space-12);
+  justify-content: flex-start;
+}
+.work-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  min-width: 220px; /* adjust slightly if needed */
+}
+
+
+/* ==========================================================================
+   MOBILE
+========================================================================== */
+@media (max-width: 768px) {
+  .work-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-24);
+  }
+
+  .work-actions {
+    width: 100%;
+    gap: var(--space-16);
+  }
+
+  .work-actions-top,
+  .work-actions-bottom {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+/* ==========================================================================
+   CAPABILITIES
+========================================================================== */
+.capabilities{
+  padding-bottom: var(--space-80)
+}
+.capabilities-grid {
+  margin-top: var(--space-40);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-40);
+}
+
+.capability-item .text-body {
+  margin-top: var(--space-12);
+}
+
+/* ==========================================================================
+   MOBILE
+========================================================================== */
+@media (max-width: 768px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-32);
+  }
+}
+/* ==========================================================================
+   FOOTER CTA
+========================================================================== */
+.cta-footer {
+  background-color: #f6f6f6;
+}
+
+.cta-inner {
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-64);
+  text-align: center;
+}
+
+.cta-links {
+  margin-top: var(--space-24);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-32);
+}
+
+.cta-link {
+  font-size: 14px;
+  color: var(--text-secondary);
+  position: relative;
+  padding-right: 16px;
+}
+
+.cta-link::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  transition: transform 0.2s ease;
+}
+
+.cta-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   MOBILE
+========================================================================== */
+@media (max-width: 600px) {
+  .cta-links {
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+  .cta-inner h2{
+    text-align: left
+  }
+  .cta-link{
+    justify-self: start;
+    align-self: start
+  }
+}
+/* ==========================================================================
+   SITE FOOTER
+========================================================================== */
+.site-footer {
+  background-color: #ffffff;
+  /* border-top: 1px solid var(--grey); */
+  padding-top: var(--space-20)
+}
+
+.footer-inner {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+  text-align: center;
+}
+/* ==========================================================================
+   CASE STUDY – TOP
+========================================================================== */
+.container-narrow {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.case-hero .text-h1 {
+  margin-top: var(--space-8);
+}
+
+.case-eyebrow {
+  color: var(--text-secondary);
+}
+
+.case-meta {
+  margin-top: var(--space-32);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-40);
+}
+
+.case-meta-item .muted {
+  margin-bottom: var(--space-4);
+}
+
+.case-links {
+  display: flex;
+  gap: var(--space-16);
+}
+
+.case-link {
+  font-size: 14px;
+  color: var(--text-primary);
+  position: relative;
+  padding-right: 16px;
+}
+
+.case-link::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  transition: transform 0.2s ease;
+}
+
+.case-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .case-meta {
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+  }
+}
+/* ==========================================================================
+   CASE STUDY – SECTION BLOCK
+========================================================================== */
+.case-section {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
+}
+
+.case-section-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.case-section-body {
+  margin-top: var(--space-24);
+  max-width: 720px;
+}
+
+.case-section-body p {
+  margin-bottom: var(--space-16);
+  color: var(--text-secondary);
+}
+
+.case-section-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CASE STUDY – LIST BLOCK
+========================================================================== */
+.case-list {
+  margin-top: var(--space-12);
+  list-style: none;
+  padding-left: 0;
+  max-width: 720px;
+}
+
+.case-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: var(--space-16);
+  color: var(--text-secondary);
+}
+
+.case-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--text-secondary);
+}
+
+.case-list li:last-child {
+  margin-bottom: 0;
+}
+
+.case-list-title {
+  margin-top: var(--space-16);
+  margin-bottom: 0;
+  line-height: 1.4;
+  padding-bottom: 0;
+  color: var(--text-secondary);
+  
+}
+
+/* ==========================================================================
+   CASE STUDY – VISUALS
+========================================================================== */
+.case-visuals {
+  margin-top: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.case-visuals img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 550px;
+}
+
+.case-muted{
+  margin-top: var(--space-16)
+}
+
+.case-cta-group .btn-primary{
+  padding-top: 0
+}
+
+/* ------------------------------
+   Case Study: Social + Motion
+-------------------------------- */
+
+.case-brand-posters {
+  display: flex;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
+  flex-wrap: wrap;
+}
+
+.case-brand-posters img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+}
+
+/* Motion video wrapper */
+.case-motion-video {
+  margin-top: 48px;
+  max-width: 600px;
+}
+
+.case-motion-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .case-brand-posters {
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .case-brand-posters {
+    gap: 16px;
+  }
+
+  .case-motion-video {
+    margin-top: 40px;
+  }
+}
