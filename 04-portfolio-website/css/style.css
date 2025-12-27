@@ -599,7 +599,20 @@ img {
 }
 
 /* ==========================================================================
-   CASE STUDY – LIST BLOCK
+   CASE STUDY –utils
+========================================================================== */
+.performance-snapshot {
+  margin-top: 24px;
+}
+
+.performance-snapshot img {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+}
+/* ==========================================================================
+CASE STUDY – LIST BLOCK
 ========================================================================== */
 .case-list {
   margin-top: var(--space-12);
