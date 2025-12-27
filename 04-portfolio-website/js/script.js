@@ -1,21 +1,50 @@
+/**
+ * navigation functionality
+ *
+ * @format
+ */
 
- /* navigation functionality */
- const header = document.querySelector('.site-header');
-  let lastScrollY = window.scrollY;
+const header = document.querySelector('.site-header')
+let lastScrollY = window.scrollY
+let isSticky = false
+let ticking = false
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+function updateHeader() {
+  const currentScroll = window.scrollY
 
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      // Scroll down and beyond threshold
-      header.style.transform = 'translateY(-100%)';
-    } else {
-      // Scroll up
-      header.style.transform = 'translateY(0)';
+  // Scrolling down
+  if (currentScroll > lastScrollY) {
+    header.style.transform = 'translateY(-100%)'
+  } else {
+    header.style.transform = 'translateY(0)'
+
+    // Add sticky only if scrolled past 100px
+    if (currentScroll > 100 && !isSticky) {
+      header.classList.add('sticky')
+      isSticky = true
     }
 
-    lastScrollY = currentScrollY;
-  });
-  
-  /* udpate year in the site footer */
-  document.getElementById('year').textContent = new Date().getFullYear()
+    // Delay removal of sticky to avoid flicker
+    if (currentScroll <= 100 && isSticky) {
+      setTimeout(() => {
+        if (window.scrollY <= 100) {
+          header.classList.remove('sticky')
+          isSticky = false
+        }
+      }, 150) // 150ms delay allows for smoother transition
+    }
+  }
+
+  lastScrollY = currentScroll
+  ticking = false
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateHeader)
+    ticking = true
+  }
+})
+
+/* udpate year in the site footer */
+document.getElementById('year').textContent = new Date().getFullYear()

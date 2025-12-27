@@ -247,14 +247,20 @@ img {
    HEADER / NAV
 ========================================================================== */
 .site-header {
-  position: fixed;
-  top: 0;
   width: 100%;
-  z-index: 1000;
   background-color: var(--background);
   border-bottom: 1px solid var(--grey);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, top 0.3s ease;
+  z-index: 1000;
 }
+
+.site-header.sticky {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
+}
+
 
 
 
