@@ -9,7 +9,7 @@ import NotesTab from "@/components/candidate/NotesTab";
 import CandidateTabs from "@/components/candidate/CandidateTabs";
 
 
-const LOCAL_STORAGE_KEY = "hireflow_candidates";
+// const LOCAL_STORAGE_KEY = "hireflow_candidates";
 
 export default function CandidateProfile() {
   const { id } = useParams();
