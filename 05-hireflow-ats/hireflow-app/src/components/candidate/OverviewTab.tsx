@@ -6,60 +6,54 @@ export default function OverviewTab({
   candidate: Candidate;
 }) {
   return (
-    <div className="rounded-xl border bg-white p-6 space-y-8">
+    <div className="rounded-xl border border-gray-200 bg-white p-6 space-y-8">
       {/* Summary */}
       <section>
-        <h3 className="text-lg font-medium mb-4">Summary</h3>
+        <h3 className="mb-4 text-lg font-medium text-gray-900">
+          Summary
+        </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 text-sm">
-          <div>
-            <p className="text-gray-500 mb-1">Email</p>
-            <p className="text-gray-900">{candidate.email}</p>
-          </div>
-
-          <div>
-            <p className="text-gray-500 mb-1">Phone</p>
-            <p className="text-gray-900">{candidate.phone}</p>
-          </div>
+        <div className="grid grid-cols-1 gap-x-12 gap-y-6 md:grid-cols-2 text-sm">
+          <Info label="Email" value={candidate.email} />
+          <Info label="Phone" value={candidate.phone} />
+          <Info label="Role" value={candidate.role} />
 
           <div>
-            <p className="text-gray-500 mb-1">Role</p>
-            <p className="text-gray-900">{candidate.role}</p>
-          </div>
-
-          <div>
-            <p className="text-gray-500 mb-1">Current Stage</p>
-            <span className="inline-block rounded-md bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700">
+            <p className="mb-1 text-gray-500">Current Stage</p>
+            <span className="inline-flex rounded-md bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700">
               {candidate.stage}
             </span>
           </div>
 
-          <div>
-            <p className="text-gray-500 mb-1">Score</p>
-            <p className="text-gray-900 font-medium">
-              {candidate.score !== undefined
+          <Info
+            label="Score"
+            value={
+              candidate.score !== undefined
                 ? `${candidate.score}/100`
-                : "—"}
-            </p>
-          </div>
+                : "—"
+            }
+            bold
+          />
 
-          <div>
-            <p className="text-gray-500 mb-1">Last Updated</p>
-            <p className="text-gray-900">{candidate.lastUpdated}</p>
-          </div>
+          <Info
+            label="Last Updated"
+            value={candidate.lastUpdated}
+          />
         </div>
       </section>
 
       {/* Skills */}
       <section>
-        <h3 className="text-lg font-medium mb-4">Skills</h3>
+        <h3 className="mb-4 text-lg font-medium text-gray-900">
+          Skills
+        </h3>
 
-        {candidate.skills && candidate.skills.length > 0 ? (
+        {candidate.skills?.length ? (
           <div className="flex flex-wrap gap-2">
             {candidate.skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-md bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700"
+                className="rounded-md bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700"
               >
                 {skill}
               </span>
@@ -71,6 +65,25 @@ export default function OverviewTab({
           </p>
         )}
       </section>
+    </div>
+  );
+}
+
+function Info({
+  label,
+  value,
+  bold,
+}: {
+  label: string;
+  value: string;
+  bold?: boolean;
+}) {
+  return (
+    <div>
+      <p className="mb-1 text-gray-500">{label}</p>
+      <p className={`text-gray-900 ${bold ? "font-medium" : ""}`}>
+        {value}
+      </p>
     </div>
   );
 }

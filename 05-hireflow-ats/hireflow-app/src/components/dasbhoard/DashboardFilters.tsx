@@ -13,7 +13,6 @@ interface DashboardFiltersProps {
   onAddCandidate: () => void;
 }
 
-
 const STAGES = [
   "All Stages",
   "Applied",
@@ -50,8 +49,8 @@ const DashboardFilters = ({
   onAddCandidate,
 }: DashboardFiltersProps) => {
   return (
-    <section className="flex items-center justify-between">
-      <div className="flex gap-3 items-center">
+    <section className="flex items-center justify-between gap-4">
+      <div className="flex items-center gap-3">
         <SearchFilter value={search} onChange={onSearchChange} />
 
         <SelectFilter
@@ -68,21 +67,23 @@ const DashboardFilters = ({
           onChange={onRoleChange}
         />
 
-
         <button
           onClick={() => {
             onSearchChange("");
             onStageChange("All Stages");
             onRoleChange("All Roles");
           }}
-          className="text-sm text-gray-500"
+          className="text-sm text-gray-500 hover:text-gray-700"
         >
           Clear Filters
         </button>
       </div>
 
-      <Button onClick={onAddCandidate} style={{ backgroundColor: "purple" }}>
-        + Add Candidate
+      <Button onClick={onAddCandidate}>
+        <span className="flex items-center gap-2">
+          <span className="text-lg leading-none">+</span>
+          Add Candidate
+        </span>
       </Button>
     </section>
   );

@@ -10,49 +10,30 @@ export default function Button({
   variant = "primary",
   className = "",
   disabled,
-  style,
   ...props
 }: ButtonProps) {
   const base =
-    "text-sm font-medium transition focus:outline-none"
+    "inline-flex items-center justify-center text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
 
-  const variants = {
+  const variants: Record<ButtonVariant, string> = {
     primary:
-      "!bg-[#7C5CDE] px-4 py-2 rounded-md text-white enabled:hover:!bg-[#6B4FD6] focus:ring-2 focus:ring-purple-500 focus:ring-offset-2",
+      "px-4 py-2 rounded-md bg-brand-600 text-white hover:bg-brand-700",
 
     secondary:
-      "px-4 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2",
+      "px-4 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-100",
 
     link:
-      "!text-[#7C5CDE] hover:underline"
+      // full reset + link styling
+      "p-0 bg-transparent border-none text-brand-600 hover:text-brand-700 hover:underline focus-visible:ring-0"
   }
-
-  const disabledStyles =
-    "opacity-50 cursor-not-allowed pointer-events-none"
-
-  const linkResetStyles: React.CSSProperties =
-    variant === "link"
-      ? {
-        padding: 0,
-        margin: 0,
-        background: "transparent",
-        border: "none",
-        borderRadius: 0,
-        boxShadow: "none",
-        appearance: "none",
-        WebkitAppearance: "none"
-      }
-      : {}
 
   return (
     <button
       type="button"
       disabled={disabled}
-      style={{ ...linkResetStyles, ...style }}
       className={[
         base,
         variants[variant],
-        disabled ? disabledStyles : "",
         className
       ].join(" ")}
       {...props}

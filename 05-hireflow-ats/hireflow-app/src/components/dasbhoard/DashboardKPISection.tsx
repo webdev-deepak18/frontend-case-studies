@@ -1,3 +1,4 @@
+// DashboardKPISection.tsx
 import KPICard from "./KPICard";
 
 import peopleIcon from "../../assets/icons/icon-people.svg";
@@ -19,30 +20,13 @@ const DashboardKPISection = ({
   hired,
 }: DashboardKPISectionProps) => {
   return (
-    <section className="grid grid-cols-4 gap-4">
-      <KPICard
-        label="Total Candidates"
-        value={total}
-        icon={peopleIcon}
-      />
-
-      <KPICard
-        label="In Review"
-        value={inReview}
-        icon={filterIcon}
-      />
-
-      <KPICard
-        label="Interviewing"
-        value={interviewing}
-        icon={calendarIcon}
-      />
-
-      <KPICard
-        label="Hired"
-        value={hired}
-        icon={tickIcon}
-      />
+    <section className="w-full">
+      <div className="max-w-6xl grid grid-cols-4 gap-6">
+        <KPICard label="Total Candidates" value={total} icon={peopleIcon} />
+        <KPICard label="In Review" value={inReview} icon={filterIcon} />
+        <KPICard label="Interviewing" value={interviewing} icon={calendarIcon} />
+        <KPICard label="Hired" value={hired} icon={tickIcon} />
+      </div>
     </section>
   );
 };

@@ -13,16 +13,16 @@ export default function CandidateHeader({
 
   return (
     <>
-      <div className="rounded-xl border bg-white p-6 space-y-4">
-        <div className="flex items-start justify-between">
-          {/* Left: Candidate Info */}
+      <div className="rounded-xl border border-gray-200 bg-white p-6">
+        <div className="flex items-center justify-between">
+          {/* Left */}
           <div className="flex items-center gap-4">
-            <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center font-medium">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-brand-700 font-semibold">
               {candidate.name.charAt(0)}
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-xl font-semibold text-gray-900">
                 {candidate.name}
               </h2>
               <p className="text-sm text-gray-500">
@@ -31,18 +31,18 @@ export default function CandidateHeader({
             </div>
           </div>
 
-          {/* Right: Actions */}
+          {/* Right */}
           <div className="flex flex-col items-end gap-2">
             <button
               onClick={() => setIsScheduleOpen(true)}
-              className="rounded-md bg-purple-600 px-4 py-2 text-sm text-white hover:bg-purple-700"
+              className="rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
             >
               + Schedule Interview
             </button>
 
             <button
               onClick={() => navigate("/dashboard")}
-              className="text-sm text-gray-500 hover:text-gray-800"
+              className="text-sm text-gray-500 hover:text-gray-700"
             >
               ← Back to Dashboard
             </button>
@@ -50,27 +50,23 @@ export default function CandidateHeader({
         </div>
       </div>
 
-      {/* Schedule Interview Modal */}
+      {/* Modal */}
       <Modal
         isOpen={isScheduleOpen}
         title="Schedule Interview"
         onClose={() => setIsScheduleOpen(false)}
       >
         <div className="space-y-4 text-sm text-gray-600">
-          <p className="font-medium text-gray-800">
+          <p className="font-medium text-gray-900">
             Feature coming soon 🚀
           </p>
-
           <p>
             Interview scheduling is not available in this portfolio demo.
-            This section is intentionally left as a preview of future
-            functionality.
           </p>
-
           <div className="flex justify-end">
             <button
               onClick={() => setIsScheduleOpen(false)}
-              className="rounded-md bg-purple-600 px-4 py-2 text-sm text-white hover:bg-purple-700"
+              className="rounded-md bg-brand-600 px-4 py-2 text-sm text-white hover:bg-brand-700"
             >
               Got it
             </button>

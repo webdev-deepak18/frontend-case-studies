@@ -35,7 +35,7 @@ const AddCandidateForm = ({ onCancel, onSubmit }: AddCandidateFormProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [role, setRole] = useState("Select a role");
+  const [role, setRole] = useState("");
   const [stage, setStage] = useState<CandidateStage | "">("");
 
   const validate = () => {
@@ -56,7 +56,7 @@ const AddCandidateForm = ({ onCancel, onSubmit }: AddCandidateFormProps) => {
       return false;
     }
 
-    if (role === "Select a role") {
+    if (!role) {
       toast.error("Please select a role");
       return false;
     }
@@ -71,61 +71,60 @@ const AddCandidateForm = ({ onCancel, onSubmit }: AddCandidateFormProps) => {
 
   const handleSubmit = () => {
     if (!validate()) return;
-
-    // 🔒 Type narrowing — after validate(), stage CANNOT be ""
     if (!stage) return;
 
-    onSubmit({
-      name,
-      email,
-      phone,
-      role,
-      stage, // ✅ now inferred as CandidateStage
-    });
-
+    onSubmit({ name, email, phone, role, stage });
     toast.success("Candidate added successfully");
   };
 
   return (
-    <form className="space-y-4">
+    <form className="space-y-4 ">
       <div>
-        <label className="mb-1 block text-sm font-medium">Name</label>
+        <label className="mb-1 block text-sm font-medium text-gray-700">
+          Name
+        </label>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Jane Doe"
-          className="w-full rounded-lg border px-3 py-2 text-sm focus:ring-2 focus:ring-purple-500"
+          className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
         />
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-medium">Email</label>
+        <label className="mb-1 block text-sm font-medium text-gray-700">
+          Email
+        </label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="jane@example.com"
-          className="w-full rounded-lg border px-3 py-2 text-sm focus:ring-2 focus:ring-purple-500"
+          className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
         />
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-medium">Phone</label>
+        <label className="mb-1 block text-sm font-medium text-gray-700">
+          Phone
+        </label>
         <input
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           placeholder="+1 (555) 000-0000"
-          className="w-full rounded-lg border px-3 py-2 text-sm focus:ring-2 focus:ring-purple-500"
+          className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
         />
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-medium">Role</label>
+        <label className="mb-1 block text-sm font-medium text-gray-700">
+          Role
+        </label>
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
-          className="w-full rounded-lg border px-3 py-2 text-sm"
+          className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
         >
-          <option>Select a role</option>
+          <option value="">Select a role</option>
           {ROLES.map((r) => (
             <option key={r}>{r}</option>
           ))}
@@ -133,11 +132,13 @@ const AddCandidateForm = ({ onCancel, onSubmit }: AddCandidateFormProps) => {
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-medium">Stage</label>
+        <label className="mb-1 block text-sm font-medium text-gray-700">
+          Stage
+        </label>
         <select
           value={stage}
           onChange={(e) => setStage(e.target.value as CandidateStage)}
-          className="w-full rounded-lg border px-3 py-2 text-sm"
+          className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
         >
           <option value="">Select stage</option>
           {STAGES.map((s) => (
@@ -150,7 +151,7 @@ const AddCandidateForm = ({ onCancel, onSubmit }: AddCandidateFormProps) => {
         <button
           type="button"
           onClick={onCancel}
-          className="rounded-md border px-4 py-2 text-sm"
+          className="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
         >
           Cancel
         </button>
@@ -158,7 +159,7 @@ const AddCandidateForm = ({ onCancel, onSubmit }: AddCandidateFormProps) => {
         <button
           type="button"
           onClick={handleSubmit}
-          className="rounded-md bg-purple-600 px-4 py-2 text-sm text-white"
+          className="rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
         >
           Add Candidate
         </button>
