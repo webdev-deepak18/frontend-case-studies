@@ -48,3 +48,5 @@ window.addEventListener('scroll', () => {
 
 /* udpate year in the site footer */
 document.getElementById('year').textContent = new Date().getFullYear()
+
+
