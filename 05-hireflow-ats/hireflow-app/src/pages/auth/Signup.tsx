@@ -78,10 +78,10 @@ export default function Signup() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-semibold">
+        <h2 className="text-3xl font-semibold">
           Create your account
         </h2>
-        <p className="text-sm text-gray-500">
+        <p className="text-md text-gray-500 pt-2">
           Get started with HireFlow in a few seconds
         </p>
       </div>
@@ -121,9 +121,13 @@ export default function Signup() {
 
       <div className="text-sm text-gray-500">
         Already have an account?{' '}
-        <a href="/login" className="text-purple-600">
+        <Button
+          variant="link"
+          onClick={() => navigate("/login")}
+        >
           Log in
-        </a>
+        </Button>
+
       </div>
     </div>
   )

@@ -86,10 +86,10 @@ export default function Login() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-semibold">
+        <h2 className="text-3xl font-semibold">
           Log in to your account
         </h2>
-        <p className="text-sm text-gray-500">
+        <p className="text-md text-gray-500 pt-2">
           Enter your credentials to continue
         </p>
       </div>
@@ -110,7 +110,7 @@ export default function Login() {
       </div>
 
       <div className="flex gap-3">
-        <Button onClick={handleLogin}>
+        <Button onClick={handleLogin} variant="primary">
           Login
         </Button>
         <Button
@@ -122,18 +122,18 @@ export default function Login() {
       </div>
 
       <div className="text-sm text-gray-500">
-        <button
-          type="button"
-          onClick={handleForgotPassword}
-          className="text-purple-600 hover:underline"
-        >
+        <Button variant="link" onClick={handleForgotPassword}>
           Forgot password?
-        </button>
+        </Button>
         <br />
         Don’t have an account?{' '}
-        <a href="/signup" className="text-purple-600">
+        <Button
+          variant="link"
+          onClick={() => navigate("/signup")}
+        >
           Sign up
-        </a>
+        </Button>
+
       </div>
     </div>
   )
