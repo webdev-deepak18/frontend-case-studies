@@ -48,7 +48,7 @@ export default function BudgetHiveCaseStudyPage() {
                   Live →
                 </a>
                 <a
-                  href="https://www.figma.com/proto/q5BBDxNsBjYj8SWF6Kndzj/01-budget-hive"
+                  href="https://www.figma.com/proto/q5BBDxNsBjYj8SWF6Kndzj/01-budget-hive?node-id=1-2&t=EDKYHb3PnvN7psIV-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-900 hover:underline"

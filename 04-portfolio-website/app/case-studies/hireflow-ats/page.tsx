@@ -50,7 +50,7 @@ export default function HireFlowCaseStudyPage() {
                   Live →
                 </a>
                 <a
-                  href="https://www.figma.com/proto/3g2dni5L0OqlG3kSuYUHpC/HireFlow-ATS"
+                  href="https://www.figma.com/proto/3g2dni5L0OqlG3kSuYUHpC/HireFlow-ATS?node-id=8624-4556&p=f&t=KbsGMG2QtZUHSV8l-0&scaling=min-zoom&content-scaling=fixed&page-id=8621%3A883&starting-point-node-id=8624%3A4461"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-900 hover:underline"

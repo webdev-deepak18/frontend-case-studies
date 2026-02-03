@@ -70,7 +70,7 @@ export const workItems: WorkItemData[] = [
     linksBottom: [
       {
         label: 'Figma',
-        href: 'https://www.figma.com/proto/3g2dni5L0OqlG3kSuYUHpC/HireFlow-ATS?node-id=8624-4461&p=f&t=KbsGMG2QtZUHSV8l-0&scaling=min-zoom&content-scaling=fixed&page-id=8621%3A883&starting-point-node-id=8624%3A4461',
+        href: 'https://www.figma.com/proto/3g2dni5L0OqlG3kSuYUHpC/HireFlow-ATS?node-id=8624-4556&p=f&t=KbsGMG2QtZUHSV8l-0&scaling=min-zoom&content-scaling=fixed&page-id=8621%3A883&starting-point-node-id=8624%3A4461',
         external: true,
       },
       {
