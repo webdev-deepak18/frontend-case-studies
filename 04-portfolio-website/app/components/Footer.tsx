@@ -34,7 +34,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="/resume/Deepak-UI-Engineer-Front-End-Developer.pdf"
+            href="/resume/Deepak-UI-Designer-and-Frontend-Developer-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-neutral-900"

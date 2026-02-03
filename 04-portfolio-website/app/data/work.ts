@@ -17,6 +17,39 @@ export type WorkItemData = {
 
 export const workItems: WorkItemData[] = [
   {
+    title: '17 Oranges — Company Website (UI + Front-End)',
+    description:
+      'A real-world company website designed and built end-to-end, from stakeholder brief and Figma prototypes to a React implementation handed off to an internal development team.',
+    stack:
+      'UI Design · Front-End Development · React · JavaScript · Styled Components',
+    linksTop: [
+      {
+        label: 'Live',
+        href: 'https://17oranges.com/',
+        variant: 'secondary',
+        external: true,
+      },
+      {
+        label: 'Case Study →',
+        href: '/case-studies/17-oranges',
+        variant: 'primary',
+      },
+    ],
+    linksBottom: [
+      {
+        label: 'Figma',
+        href: 'https://www.figma.com/proto/3VpM7BZWc0nHIXHemFsCpC/17Oranges?node-id=6-37&p=f&t=vNUJIv5zmRqLD2QT-0&scaling=scale-down&content-scaling=fixed&page-id=6%3A2',
+        external: true,
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/webdev-deepak18/frontend-case-studies/tree/main/00-17-oranges',
+        external: true,
+      },
+    ],
+  },
+
+  {
     title: 'HireFlow — Recruitment Dashboard (UI + Front-End)',
     description:
       'A desktop-first recruitment management dashboard built with React and TypeScript, focused on scalable layout architecture, reusable components, and real-world SaaS workflows.',
