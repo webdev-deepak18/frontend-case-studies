@@ -1,6 +1,6 @@
 export default function Capabilities() {
   return (
-    <section >
+    <section>
       <h2 className="text-2xl font-semibold text-neutral-900">
         Capabilities
       </h2>
@@ -13,7 +13,9 @@ export default function Capabilities() {
           </h3>
           <p className="mt-3 text-neutral-700">
             Designing clear interface structures, visual hierarchy, and
-            component systems that scale across screens and products.
+            component systems that scale across screens and products. Strong
+            focus on layout, typography, spacing, and consistency to support
+            real-world usability and long-term maintainability.
           </p>
         </div>
 
@@ -24,19 +26,22 @@ export default function Capabilities() {
           </h3>
           <p className="mt-3 text-neutral-700">
             Building responsive, accessible interfaces using clean HTML, CSS,
-            and JavaScript. Experienced with React and Next.js — focused on
-            clarity, performance, and scalable UI systems.
+            and JavaScript. Experienced with React and Next.js, translating
+            design systems into reusable components and scalable front-end
+            structures with clarity and performance in mind.
           </p>
         </div>
 
         {/* Item 3 */}
         <div>
           <h3 className="text-base font-semibold text-neutral-900">
-            Motion & Creative Tech
+            Product & Interface Thinking
           </h3>
           <p className="mt-3 text-neutral-700">
-            Using motion and creative tooling selectively to add clarity,
-            rhythm, and polish — never as decoration.
+            Making deliberate design and implementation decisions based on
+            context, constraints, and real usage. Focused on clarity,
+            maintainability, and building interfaces that work well over time,
+            not just at launch.
           </p>
         </div>
       </div>
