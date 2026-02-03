@@ -153,7 +153,7 @@ export const workItems: WorkItemData[] = [
     linksBottom: [
       {
         label: 'Figma',
-        href: 'https://www.figma.com/proto/GINMVXH4L3eg0ZTO9sF6eJ/04-portfolio?node-id=2017-1759&p=f&t=iC2NxNKgnN6dqpRm-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2',
+        href: 'https://www.figma.com/proto/GINMVXH4L3eg0ZTO9sF6eJ/04-portfolio?node-id=1-2&p=f&t=iC2NxNKgnN6dqpRm-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2',
         external: true,
       },
       {
