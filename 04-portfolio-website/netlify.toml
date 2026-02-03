@@ -1,5 +1,9 @@
 [build]
+  base = "04-portfolio-website"
   command = "npm run build"
+
+[functions]
+  directory = ""
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
